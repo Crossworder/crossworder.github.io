@@ -4,8 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crossworder</title>
+    <title>Crossworder - Learn English Through Crossword Puzzles</title>
+    <meta name="description"
+        content="Crossworder is an educational mobile app that helps you learn English through engaging crossword puzzles. Available on iOS and Android.">
+    <meta name="keywords" content="crossword, english learning, education, mobile app, puzzle, vocabulary">
+    <meta name="author" content="Crossworder Team">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crossworder.github.io/">
+    <meta property="og:title" content="Crossworder - Learn English Through Crossword Puzzles">
+    <meta property="og:description"
+        content="Crossworder is an educational mobile app that helps you learn English through engaging crossword puzzles. Available on iOS and Android.">
+    <meta property="og:image" content="https://crossworder.github.io/assets/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://crossworder.github.io/">
+    <meta property="twitter:title" content="Crossworder - Learn English Through Crossword Puzzles">
+    <meta property="twitter:description"
+        content="Crossworder is an educational mobile app that helps you learn English through engaging crossword puzzles. Available on iOS and Android.">
+    <meta property="twitter:image" content="https://crossworder.github.io/assets/logo.png">
+
+    <!-- Reddit Ads Compliance -->
+    <meta name="rating" content="General">
+    <meta name="content-rating" content="General">
+
     <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="canonical" href="https://crossworder.github.io/">
     <style>
         * {
             margin: 0;
@@ -14,12 +40,14 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #f8f8f8;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
             min-height: 100vh;
             overflow-x: hidden;
+            font-size: 16px;
+            font-weight: 400;
         }
 
         body::before {
@@ -51,10 +79,123 @@
             z-index: 1;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .navbar-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #fff;
+        }
+
+        .compliance-notice {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ffc107;
+        }
+
+        .age-rating {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .data-transparency-notice {
+            background: rgba(0, 123, 255, 0.1);
+            border: 2px solid rgba(0, 123, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .data-transparency-notice h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .data-transparency-notice ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .data-transparency-notice li {
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+
+        .data-transparency-notice strong {
+            color: #fff;
+        }
+
+        .app-privacy-notice {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4CAF50;
+        }
+
+        .app-privacy-notice strong {
+            color: #4CAF50;
+        }
+
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             position: relative;
+            padding-top: 20px;
         }
 
         .logo {
@@ -286,6 +427,67 @@
             object-fit: cover;
         }
 
+        .features-section {
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, rgba(83, 52, 131, 0.1) 0%, rgba(114, 9, 183, 0.1) 100%);
+            border-radius: 25px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(83, 52, 131, 0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #a8d8ea, #b8e6b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(83, 52, 131, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
         .footer {
             text-align: center;
             padding: 40px 0;
@@ -297,19 +499,81 @@
             box-shadow: 0 8px 32px rgba(83, 52, 131, 0.2);
         }
 
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: #b0b0b0;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
         /* Mobile optimizations */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
             }
 
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .navbar-nav {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .compliance-notice {
+                font-size: 0.8rem;
+                padding: 12px;
+            }
+
+            .data-transparency-notice {
+                padding: 15px;
+                font-size: 0.8rem;
+            }
+
+            .data-transparency-notice h3 {
+                font-size: 1.1rem;
+            }
+
             .logo {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
             }
 
             .title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
             }
 
             .download-buttons {
@@ -346,8 +610,19 @@
         }
 
         @media (max-width: 480px) {
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+
             .title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
             }
 
             .download-buttons {
@@ -384,6 +659,19 @@
 
 <body>
     <div class="container">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a href="#" class="navbar-brand">
+                <img src="assets/logo.png" alt="Crossworder Logo">
+                Crossworder
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
         <header class="header">
             <img src="assets/logo.png" alt="Crossworder Logo" class="logo">
             <h1 class="title">Crossworder</h1>
@@ -407,13 +695,20 @@
                     Google Play
                 </a>
             </div>
+
+            <div class="app-privacy-notice">
+                <p><strong>🔒 Privacy First:</strong> No personal data collection • No registration required • Works
+                    offline • Data stays on your device</p>
+            </div>
         </header>
 
         <div class="cta-container">
-            <div class="cta-text" id="ctaText">Learn English by playing crossword puzzles</div>
+            <div class="cta-text" id="ctaText">Master English vocabulary through engaging crossword puzzles - Start your
+                learning journey today!</div>
         </div>
 
-        <div class="screenshots-container">
+
+        <div id="screenshots" class="screenshots-container">
             <h2 class="screenshots-title">App Screenshots</h2>
             <div class="screenshots-scroll">
                 <div class="screenshot">
@@ -450,22 +745,91 @@
             </div>
         </div>
 
-        <footer class="footer">
-            <p>&copy; 2024 Crossworder. All rights reserved.</p>
+        <section id="features" class="features-section">
+            <h2 class="section-title">Why Choose Crossworder?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Educational Focus</h3>
+                    <p>Designed specifically for English language learning with carefully curated vocabulary and
+                        difficulty levels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Progressive Learning</h3>
+                    <p>Start with basic words and gradually advance to more complex vocabulary and grammar concepts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Gamified Experience</h3>
+                    <p>Earn points, unlock achievements, and track your progress as you master English vocabulary.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Offline Play</h3>
+                    <p>Download puzzles and play anywhere, anytime without requiring an internet connection.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="compliance-notice" role="alert" aria-label="App compliance information">
+            <strong>Educational App Notice:</strong> This app is designed for educational purposes to help users learn
+            English through crossword puzzles.
+            <span class="age-rating">E</span> Suitable for all ages.
+        </div>
+
+        <div class="data-transparency-notice" role="alert" aria-label="Data collection transparency">
+            <h3>🔒 Data Collection Transparency</h3>
+            <p><strong>We are completely transparent about data collection:</strong></p>
+            <ul>
+                <li>✅ <strong>NO personal data required</strong> - App works without registration</li>
+                <li>✅ <strong>NO location tracking</strong> - We don't collect your location</li>
+                <li>✅ <strong>NO contact access</strong> - We don't access your contacts</li>
+                <li>✅ <strong>NO microphone access</strong> - We don't record audio</li>
+                <li>✅ <strong>NO camera access</strong> - We don't access your camera</li>
+                <li>✅ <strong>Only educational progress data</strong> - Puzzle completion and learning stats</li>
+                <li>✅ <strong>Anonymous usage analytics</strong> - To improve app performance only</li>
+            </ul>
+            <p><strong>Data is stored locally on your device and never shared with third parties.</strong></p>
+        </div>
+
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="#features">Features</a>
+                    <a href="#screenshots">Screenshots</a>
+                    <a href="mailto:support@crossworder.app">Contact Support</a>
+                </div>
+                <p>&copy; 2024 Crossworder. All rights reserved.</p>
+                <div class="footer-disclaimer">
+                    <p><strong>Educational Disclaimer:</strong> Crossworder is an educational app designed to help users
+                        learn English vocabulary through crossword puzzles.
+                        Results may vary based on individual learning patterns and consistent usage. This app is
+                        suitable for all ages and contains no inappropriate content.</p>
+                    <p><strong>Data Collection Transparency:</strong> We collect ZERO personal data. No registration
+                        required. All progress data stays on your device.
+                        We only collect anonymous usage analytics to improve app performance. No data is shared with
+                        third parties.</p>
+                    <p><strong>App Store Compliance:</strong> This app complies with Apple App Store and Google Play
+                        Store policies for educational content and data privacy.</p>
+                </div>
+            </div>
         </footer>
     </div>
 
     <script>
         // Multilingual call-to-action text with blur effect
         const ctaTexts = {
-            en: "Learn English by playing crossword puzzles",
-            es: "Aprende inglés jugando crucigramas",
-            pt: "Aprenda inglês jogando palavras cruzadas",
-            hi: "क्रॉसवर्ड पहेलियाँ खेलकर अंग्रेजी सीखें",
-            az: "Krossvord oyunları oynayaraq ingiliscə öyrənin"
+            en: "Master English vocabulary through engaging crossword puzzles - Start your learning journey today!",
+            es: "Domina el vocabulario inglés con crucigramas divertidos - ¡Comienza tu viaje de aprendizaje hoy!",
+            pt: "Domine o vocabulário inglês com palavras cruzadas envolventes - Comece sua jornada de aprendizado hoje!",
+            hi: "मनोरंजक क्रॉसवर्ड पहेलियों के माध्यम से अंग्रेजी शब्दावली में महारत हासिल करें - आज ही अपनी सीखने की यात्रा शुरू करें!",
+            az: "Maraqlı krossvord oyunları ilə ingilis söz ehtiyatında usta olun - Bu gün öyrənmə səyahətinizi başlayın!",
+            tr: "Eğlenceli bulmaca oyunlarıyla İngilizce kelime dağarcığınızı geliştirin - Öğrenme yolculuğunuza bugün başlayın!"
         };
 
-        const languages = ['en', 'es', 'pt', 'hi', 'az'];
+        const languages = ['en', 'es', 'pt', 'hi', 'az', 'tr'];
         let currentIndex = 0;
         const ctaElement = document.getElementById('ctaText');
 
